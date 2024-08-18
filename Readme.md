@@ -32,4 +32,4 @@ Part 3 - Performance & Accessibility testing
 
 ## Part 4 (Optional) - Use the tools in anger!
 
-If you have time after exploring each of the tools, have a go at setting them up fresh for your Project Exercise codebase (or indeed, for a work project). What useful tests can you generate?
+If you have time after exploring each of the tools, have a go at setting them up fresh for the Bank API exercise (or indeed, a work project). What useful tests can you generate?
