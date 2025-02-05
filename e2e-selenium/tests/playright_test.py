@@ -28,30 +28,15 @@ def driver():
 
 def test_chrome_open_google(driver):
 
-    driver.get("https://www.selenium.dev/")
 
-    # handle cookie pop up
-    try:
-        element = driver.find_element(By.XPATH, '//div[text()="Reject all"]')
-        element.click()
-    except:
-        # continue onwards
-        pass
-    #Tax screenshot
+    driver.get("https://demo.playwright.dev/todomvc/#/")
+    todoBox = driver.find_element(By.CLASS_NAME, 'new-todo')
+    todoBox.send_keys("Start selenium")
+    todoBox.send_keys(Keys.RETURN)
+    todoBox.send_keys("Check selenium")
+    todoBox.send_keys(Keys.RETURN)
 
-    element = driver.find_element(By.CSS_SELECTOR, '#main_navbar > ul > li:nth-child(3) > a > span')
-    element.click()
-    search_button = driver.find_element(By.CLASS_NAME, 'DocSearch-Button-Placeholder')
-    search_button.click()
+    driver.save_screenshot('playrightphoto.png')
 
-    search_box = driver.find_element(By.CLASS_NAME, 'DocSearch-Input')
-    search_box.send_keys("Select")
-    element = WebDriverWait(driver, 5).until(
-        EC.presence_of_element_located((By.ID, "docsearch-item-0"))
-    )
-    driver.save_screenshot('photo.png')
-    element = driver.find_element(By.ID, 'docsearch-item-0')
-    element.click()
-    # Leave the screen up for a few seconds
-    # just while we're watching the tests directly
+
     sleep(1)
